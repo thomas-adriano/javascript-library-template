@@ -61,20 +61,22 @@ It would be possible to import it via [script tag](https://developer.mozilla.org
 ```
 ```javascript
 // script tag import generates a global object property
-exampleLib.fnOne();
+// the property exampleLib comes from webpack.config.js' output.library property
 exampleLib.fnTwo();
 ```
 It would also be possible to import it via [CommonJS](http://wiki.commonjs.org/wiki/CommonJS):
 ```
-npm i --save libraryName
+npm i --save library-name
 ```
 ```javascript
-const exampleLib = require("exampleLib");
+//the name "example-lib" comes from webpack.config.js' output.filename property
+const exampleLib = require("example-lib");
 exampleLib.fnOne();
 exampleLib.fnTwo();
 ```
 And, finally, as an [AMD](http://requirejs.org/docs/start.html) module:
 ```javascript
+//the name "example-lib" comes also from webpack.config.js' output.filename property
 requirejs(["example-lib.js"], function(exampleLib) {
     exampleLib.fnOne();
     exampleLib.fnTwo();
