@@ -1,5 +1,5 @@
 # javascript-library-template
-A Javascript library template project UMD (CommonJS, AMD, global variable) ready.
+A Javascript library template project [UMD](https://github.com/umdjs/umd) ([CommonJS](http://wiki.commonjs.org/wiki/CommonJS), [AMD](http://requirejs.org/docs/start.html), [global variable](https://developer.mozilla.org/en/docs/Web/HTML/Element/script)) ready.
 
 
 # Gettig started
@@ -47,7 +47,7 @@ function fnTwo() {
 ```
 ## Client side 
 
-It would be possible to import it via [script tag](https://developer.mozilla.org/en/docs/Web/HTML/Element/script):
+It would be possible to import it via script tag:
 ```html
 <html>
 <head>
@@ -64,7 +64,7 @@ It would be possible to import it via [script tag](https://developer.mozilla.org
 // the property exampleLib comes from webpack.config.js' output.library property
 exampleLib.fnTwo();
 ```
-It would also be possible to import it via [CommonJS](http://wiki.commonjs.org/wiki/CommonJS):
+It would also be possible to import it via CommonJs:
 ```
 npm i --save library-name
 ```
@@ -74,7 +74,7 @@ const exampleLib = require("example-lib");
 exampleLib.fnOne();
 exampleLib.fnTwo();
 ```
-And, finally, as an [AMD](http://requirejs.org/docs/start.html) module:
+And, finally, as an AMD module:
 ```javascript
 //the name "example-lib" comes also from webpack.config.js' output.filename property
 requirejs(["example-lib.js"], function(exampleLib) {
